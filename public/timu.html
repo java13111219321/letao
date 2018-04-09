@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+  //  题目1
+//      var x = [typeof x, typeof y][1];
+//      console.log(typeof typeof x);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //数组其实就是这个样子["undefined","undefined"]
+  //"string"
+
+
+//  题目2
+//     var f = (function f() {return "1";}, function g() {return 2;})();
+//     typeof f;
+//  var a = 1,
+//    b=2,
+//    c=3;
+//  console.log((a++, b++, c++));
+//
+//  var a = 1;
+//  var b = 2;
+//  console.log((a = b));
+
+
+
+
+
+
+
+
+  //首先要理解分组选择符，最后a会赋给什么呢？
+  // var a = (1,2,3);
+  // alert(a) ---> 3
+  //那么这就简单了，f = function(){return 2};
+  //typeof f() ---> number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //  题目3
+    var a = 1;
+    var b = function a(x) {
+      x && a(--x);
+      console.log(x);
+      return x;
+    };
+    console.log(b(2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*注意点：
+   1.  命名函数表达式，在IE678中会被当做函数声明，也就是预解析
+   时会被提升，而遇到同名变量赋值会被覆盖，导致函数体内调用函数报错not a fnc。
+   该题的
+   var b = function a(x) {
+   x && a(--x);
+   console.log(x);
+   return x;
+   };
+   是一个命名函数表达式，有一点需要记住：这个名字a只在新定义的函数作用域内有效，因为规范规定了标示符不能在外围的作用域内有效：
+
+
+   2.--号，则在递减后返回数值
+
+   3.&&  与号  前面的值为false  则后面的不会执行
+   第一次循环的x为1 第二次为0，第三次为0，而b(2)返回值为第一次的x 1；结果 0 0 1 1 ；
+   */
+
+</script>
+</body>
+</html>
